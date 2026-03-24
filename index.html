@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Notion 데이터베이스 업로드 매뉴얼</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <!-- 상단 컨트롤 바 -->
+  <header id="top-bar">
+    <div class="top-bar-left">
+      <span class="logo">📚 WYD DID 매뉴얼</span>
+    </div>
+    <div class="top-bar-center">
+      <div class="section-indicator">
+        <span id="current-section">1</span> / <span id="total-sections">8</span>
+      </div>
+    </div>
+    <div class="top-bar-right">
+      <button id="search-btn" class="control-btn" title="검색">
+        <i class="fas fa-search"></i>
+      </button>
+      <button id="theme-toggle" class="control-btn" title="테마 변경">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- 검색 모달 -->
+  <div id="search-modal" class="modal">
+    <div class="modal-content">
+      <div class="search-header">
+        <i class="fas fa-search"></i>
+        <input type="text" id="search-input" placeholder="검색어를 입력하세요...">
+        <button id="search-close" class="close-btn"><i class="fas fa-times"></i></button>
+      </div>
+      <div id="search-results"></div>
+    </div>
+  </div>
+
+  <!-- 이동 버튼 -->
+  <div id="nav-buttons">
+    <button id="go-top" class="nav-btn" title="맨 위로">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+    <button id="go-bottom" class="nav-btn" title="맨 아래로">
+      <i class="fas fa-chevron-down"></i>
+    </button>
+  </div>
+
+  <div id="fullpage">
+    <!-- 섹션 0: 인트로 -->
+    <div class="section intro-section" data-title="시작">
+      <div class="section-icon"><i class="fas fa-book-open"></i></div>
+      <div class="content">
+        <h1 class="fade-in">Notion 데이터베이스<br>업로드 매뉴얼</h1>
+        <p class="subtitle fade-in delay-1">WYD DID 웹사이트 콘텐츠 관리 가이드</p>
+        <div class="notice-box fade-in delay-2">
+          <h3><i class="fas fa-exclamation-circle"></i> 공통 주의사항</h3>
+          <ul>
+            <li><span class="highlight"><i class="fas fa-clock"></i> 데이터 반영 시간:</span> 업로드 후 최대 60초 후에 웹사이트에 반영됩니다</li>
+            <li><span class="highlight"><i class="fas fa-language"></i> 한글/영문 별도 관리:</span> 각 언어별로 별도의 데이터베이스가 있습니다</li>
+            <li><span class="highlight"><i class="fas fa-asterisk"></i> 빈 값 주의:</span> 필수 속성이 비어있으면 해당 항목이 표시되지 않을 수 있습니다</li>
+          </ul>
+        </div>
+        <div class="scroll-hint fade-in delay-3">
+          <span>아래로 스크롤하세요</span>
+          <div class="mouse">
+            <div class="wheel"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 섹션 1: 캘린더 -->
+    <div class="section calendar-section" data-title="캘린더">
+      <div class="section-icon"><i class="fas fa-calendar-alt"></i></div>
+      <div class="content">
+        <div class="section-header">
+          <span class="section-number slide-in-left">01</span>
+          <h2 class="slide-in-right"><i class="fas fa-calendar-alt"></i> 캘린더 (Calendar)</h2>
+        </div>
+        <div class="two-column">
+          <div class="column info-column fade-in-up">
+            <h3><i class="fas fa-table"></i> 속성 구조</h3>
+            <table class="property-table">
+              <thead>
+                <tr>
+                  <th>속성명</th>
+                  <th>타입</th>
+                  <th>필수</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>제목</td>
+                  <td><span class="type-badge">Title</span></td>
+                  <td><span class="required">✅</span></td>
+                  <td>이벤트 제목</td>
+                </tr>
+                <tr>
+                  <td>날짜</td>
+                  <td><span class="type-badge">Date</span></td>
+                  <td><span class="required">✅</span></td>
+                  <td>이벤트 날짜</td>
+                </tr>
+                <tr>
+                  <td>소제목</td>
+                  <td><span class="type-badge">Rich Text</span></td>
+                  <td><span class="optional">❌</span></td>
+                  <td>부가 설명</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="tips-box">
+              <h4><i class="fas fa-lightbulb"></i> 작성 방법</h4>
+              <ol>
+                <li><strong>제목:</strong> 이벤트명 입력 (예: "청년 미사")</li>
+                <li><strong>날짜:</strong> 단일 날짜 또는 "End date" 활성화하여 기간 설정</li>
+                <li><strong>소제목:</strong> 추가 설명이 필요한 경우 입력</li>
+              </ol>
+            </div>
+            <div class="warning-box">
+              <h4><i class="fas fa-exclamation-triangle"></i> 주의사항</h4>
+              <ul>
+                <li>날짜가 없으면 목록에 표시되지 않습니다</li>
+                <li>최신 날짜순으로 자동 정렬됩니다</li>
+              </ul>
+            </div>
+          </div>
+          <div class="column image-column fade-in-up delay-1">
+            <div class="image-placeholder">
+              <div class="placeholder-content">
+                <i class="fas fa-calendar-alt placeholder-icon"></i>
+                <span class="placeholder-text">캘린더 예시 이미지</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 섹션 2: 공지사항 -->
+    <div class="section notice-section" data-title="공지사항">
+      <div class="section-icon"><i class="fas fa-bullhorn"></i></div>
+      <div class="content">
+        <div class="section-header">
+          <span class="section-number slide-in-left">02</span>
+          <h2 class="slide-in-right"><i class="fas fa-bullhorn"></i> 공지사항 (Notice)</h2>
+        </div>
+        <div class="two-column">
+          <div class="column info-column fade-in-up">
+            <h3><i class="fas fa-table"></i> 속성 구조</h3>
+            <table class="property-table">
+              <thead>
+                <tr>
+                  <th>속성명</th>
+                  <th>타입</th>
+                  <th>필수</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>타이틀</td>
+                  <td><span class="type-badge">Title</span></td>
+                  <td><span class="required">✅</span></td>
+                  <td>공지사항 제목</td>
+                </tr>
+                <tr>
+                  <td>날짜</td>
+                  <td><span class="type-badge">Date</span></td>
+                  <td><span class="required">✅</span></td>
+                  <td>작성 날짜</td>
+                </tr>
+                <tr>
+                  <td>태그</td>
+                  <td><span class="type-badge">Rich Text</span></td>
+                  <td><span class="optional">❌</span></td>
+                  <td>카테고리 (공지, 소식)</td>
+                </tr>
+                <tr>
+                  <td>파일과 미디어</td>
+                  <td><span class="type-badge">Files</span></td>
+                  <td><span class="optional">❌</span></td>
+                  <td>썸네일 이미지</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="tips-box">
+              <h4><i class="fas fa-lightbulb"></i> 작성 방법</h4>
+              <ol>
+                <li><strong>타이틀:</strong> 공지사항 제목 입력</li>
+                <li><strong>날짜:</strong> 작성일 선택</li>
+                <li><strong>태그:</strong> 카테고리 입력 (공지, 소식, 안내 등)</li>
+                <li><strong>파일과 미디어:</strong> 썸네일 이미지 업로드</li>
+                <li><strong>상세 페이지:</strong> 타이틀 옆 "열기" 버튼 클릭하여 본문 작성</li>
+              </ol>
+            </div>
+          </div>
+          <div class="column image-column fade-in-up delay-1">
+            <div class="image-placeholder">
+              <div class="placeholder-content">
+                <i class="fas fa-bullhorn placeholder-icon"></i>
+                <span class="placeholder-text">공지사항 예시 이미지</span>
+              </div>
+            </div>
+            <div class="image-spec-box">
+              <h4><i class="fas fa-image"></i> 썸네일 이미지 권장 사양</h4>
+              <ul>
+                <li><strong>권장 크기:</strong> 1280x720px (16:9)</li>
+                <li><strong>최소 크기:</strong> 640x360px</li>
+                <li><strong>최대 용량:</strong> 5MB 이하</li>
+                <li><strong>지원 형식:</strong> PNG, JPG, WebP</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 섹션 3: 유튜브 -->
+    <div class="section youtube-section" data-title="유튜브">
+      <div class="section-icon"><i class="fab fa-youtube"></i></div>
+      <div class="content">
+        <div class="section-header">
+          <span class="section-number slide-in-left">03</span>
+          <h2 class="slide-in-right"><i class="fab fa-youtube"></i> 유튜브 (YouTube)</h2>
+        </div>
+        <div class="two-column">
+          <div class="column info-column fade-in-up">
+            <h3><i class="fas fa-table"></i> 속성 구조</h3>
+            <table class="property-table">
+              <thead>
+                <tr>
+                  <th>속성명</th>
+                  <th>타입</th>
+                  <th>필수</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>제목</td>
+                  <td><span class="type-badge">Title</span></td>
+                  <td><span class="required">✅</span></td>
+                  <td>영상 제목</td>
+                </tr>
+                <tr>
+                  <td>날짜</td>
+                  <td><span class="type-badge">Date</span></td>
+                  <td><span class="required">✅</span></td>
+                  <td>업로드 날짜</td>
+                </tr>
+                <tr>
+                  <td>유튜브 동영상 고유 id</td>
+                  <td><span class="type-badge">Rich Text</span></td>
+                  <td><span class="required">✅</span></td>
+                  <td>YouTube Video ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="tips-box highlight-box">
+              <h4><i class="fas fa-key"></i> YouTube Video ID 찾는 방법</h4>
+              <div class="code-example">
+                <p>전체 URL:</p>
+                <code>https://www.youtube.com/watch?v=<span class="highlight-code">dQw4w9WgXcQ</span></code>
+                <p>짧은 URL:</p>
+                <code>https://youtu.be/<span class="highlight-code">dQw4w9WgXcQ</span></code>
+                <p class="result">→ Video ID: <strong>dQw4w9WgXcQ</strong> (이것만 입력!)</p>
+              </div>
+            </div>
+            <div class="warning-box">
+              <h4><i class="fas fa-exclamation-triangle"></i> 주의사항</h4>
+              <ul>
+                <li>전체 URL을 입력하면 안 됩니다! Video ID만 입력</li>
+                <li>Video ID는 보통 11자리 영문+숫자 조합</li>
+                <li>비공개/삭제된 영상은 재생되지 않습니다</li>
+              </ul>
+            </div>
+          </div>
+          <div class="column image-column fade-in-up delay-1">
+            <!-- 유튜브 미리보기 인터랙티브 -->
+            <div class="youtube-preview-box">
+              <h4><i class="fab fa-youtube"></i> YouTube 미리보기</h4>
+              <div class="youtube-input-group">
+                <input type="text" id="youtube-id-input" placeholder="Video ID 입력 (예: dQw4w9WgXcQ)">
+                <button id="youtube-preview-btn"><i class="fas fa-play"></i></button>
+              </div>
+              <div id="youtube-preview-container">
+                <div class="preview-placeholder">
+                  <i class="fab fa-youtube"></i>
+                  <span>Video ID를 입력하면 미리보기가 표시됩니다</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 섹션 4: FAQ -->
+    <div class="section faq-section" data-title="FAQ">
+      <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+      <div class="content">
+        <div class="section-header">
+          <span class="section-number slide-in-left">04</span>
+          <h2 class="slide-in-right"><i class="fas fa-question-circle"></i> FAQ</h2>
+        </div>
+        <div class="two-column">
+          <div class="column info-column fade-in-up">
+            <h3><i class="fas fa-table"></i> 속성 구조</h3>
+            <table class="property-table">
+              <thead>
+                <tr>
+                  <th>속성명</th>
+                  <th>타입</th>
+                  <th>필수</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>아이디(아무거나 쓰세요)</td>
+                  <td><span class="type-badge">Title</span></td>
+                  <td><span class="required">✅</span></td>
+                  <td>고유 ID</td>
+                </tr>
+                <tr>
+                  <td>제목</td>
+                  <td><span class="type-badge">Rich Text</span></td>
+                  <td><span class="required">✅</span></td>
+                  <td>질문</td>
+                </tr>
+                <tr>
+                  <td>내용</td>
+                  <td><span class="type-badge">Rich Text</span></td>
+                  <td><span class="required">✅</span></td>
+                  <td>답변</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="tips-box">
+              <h4><i class="fas fa-lightbulb"></i> 작성 방법</h4>
+              <ol>
+                <li><strong>아이디:</strong> 순번이나 고유값 입력 (예: "1", "faq-001")</li>
+                <li><strong>제목:</strong> 질문 내용 입력 (예: "참가비는 얼마인가요?")</li>
+                <li><strong>내용:</strong> 답변 내용 입력</li>
+              </ol>
+            </div>
+            <div class="warning-box">
+              <h4><i class="fas fa-exclamation-triangle"></i> 주의사항</h4>
+              <ul>
+                <li>아이디는 중복 가능하지만, 구분을 위해 고유하게 작성 권장</li>
+                <li>긴 답변은 줄바꿈(Shift + Enter)으로 가독성 높이기</li>
+                <li>데이터베이스 순서대로 표시 (드래그로 순서 변경 가능)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="column image-column fade-in-up delay-1">
+            <div class="image-placeholder">
+              <div class="placeholder-content">
+                <i class="fas fa-question-circle placeholder-icon"></i>
+                <span class="placeholder-text">FAQ 예시 이미지</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 섹션 5: 관련 사이트 -->
+    <div class="section site-section" data-title="관련 사이트">
+      <div class="section-icon"><i class="fas fa-link"></i></div>
+      <div class="content">
+        <div class="section-header">
+          <span class="section-number slide-in-left">05</span>
+          <h2 class="slide-in-right"><i class="fas fa-link"></i> 관련 사이트 (Site)</h2>
+        </div>
+        <div class="two-column">
+          <div class="column info-column fade-in-up">
+            <h3><i class="fas fa-table"></i> 속성 구조</h3>
+            <table class="property-table">
+              <thead>
+                <tr>
+                  <th>속성명</th>
+                  <th>타입</th>
+                  <th>필수</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>사이트명</td>
+                  <td><span class="type-badge">Title</span></td>
+                  <td><span class="required">✅</span></td>
+                  <td>사이트 이름</td>
+                </tr>
+                <tr>
+                  <td>URL</td>
+                  <td><span class="type-badge">URL</span></td>
+                  <td><span class="required">✅</span></td>
+                  <td>사이트 링크 주소</td>
+                </tr>
+                <tr>
+                  <td>파일과 미디어</td>
+                  <td><span class="type-badge">Files</span></td>
+                  <td><span class="required">✅</span></td>
+                  <td>사이트 로고/썸네일</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="tips-box">
+              <h4><i class="fas fa-lightbulb"></i> 작성 방법</h4>
+              <ol>
+                <li><strong>사이트명:</strong> 사이트 이름 입력 (예: "WYD 서울 2027")</li>
+                <li><strong>URL:</strong> 전체 주소 입력 (예: https://wydseoul2027.kr)</li>
+                <li><strong>파일과 미디어:</strong> 로고 또는 대표 이미지 업로드</li>
+              </ol>
+            </div>
+            <div class="warning-box">
+              <h4><i class="fas fa-exclamation-triangle"></i> 주의사항</h4>
+              <ul>
+                <li>URL은 https:// 포함 전체 주소 입력</li>
+                <li>이미지가 없으면 깨진 이미지로 표시될 수 있음</li>
+              </ul>
+            </div>
+          </div>
+          <div class="column image-column fade-in-up delay-1">
+            <div class="image-placeholder">
+              <div class="placeholder-content">
+                <i class="fas fa-link placeholder-icon"></i>
+                <span class="placeholder-text">관련 사이트 예시 이미지</span>
+              </div>
+            </div>
+            <div class="image-spec-box">
+              <h4><i class="fas fa-image"></i> 로고/썸네일 이미지 권장 사양</h4>
+              <ul>
+                <li><strong>권장 크기:</strong> 400x400px (1:1)</li>
+                <li><strong>최소 크기:</strong> 200x200px</li>
+                <li><strong>최대 용량:</strong> 2MB 이하</li>
+                <li><strong>지원 형식:</strong> PNG, JPG, WebP</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 섹션 6: 이미지 업로드 팁 -->
+    <div class="section tips-section" data-title="이미지 팁">
+      <div class="section-icon"><i class="fas fa-images"></i></div>
+      <div class="content">
+        <div class="section-header">
+          <span class="section-number slide-in-left">06</span>
+          <h2 class="slide-in-right"><i class="fas fa-images"></i> 이미지 업로드 팁</h2>
+        </div>
+        <div class="two-column">
+          <div class="column info-column fade-in-up">
+            <div class="method-box">
+              <h3><i class="fas fa-upload"></i> 방법 1: 직접 업로드</h3>
+              <ol>
+                <li><code>파일과 미디어</code> 속성 클릭</li>
+                <li>"Upload" 선택</li>
+                <li>컴퓨터에서 이미지 선택</li>
+              </ol>
+            </div>
+            <div class="method-box">
+              <h3><i class="fas fa-link"></i> 방법 2: 외부 링크 사용</h3>
+              <ol>
+                <li><code>파일과 미디어</code> 속성 클릭</li>
+                <li>"Link" 선택</li>
+                <li>이미지 URL 붙여넣기</li>
+              </ol>
+            </div>
+          </div>
+          <div class="column image-column fade-in-up delay-1">
+            <div class="spec-table-container">
+              <h3><i class="fas fa-ruler-combined"></i> 권장 이미지 사양</h3>
+              <table class="spec-table">
+                <thead>
+                  <tr>
+                    <th>용도</th>
+                    <th>권장 크기</th>
+                    <th>비율</th>
+                    <th>최대 용량</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>공지사항 썸네일</td>
+                    <td>1280x720px</td>
+                    <td>16:9</td>
+                    <td>5MB</td>
+                  </tr>
+                  <tr>
+                    <td>관련 사이트 로고</td>
+                    <td>400x400px</td>
+                    <td>1:1</td>
+                    <td>2MB</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="image-placeholder small">
+              <div class="placeholder-content">
+                <i class="fas fa-cloud-upload-alt placeholder-icon"></i>
+                <span class="placeholder-text">이미지 업로드 예시</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 섹션 7: 문제 해결 -->
+    <div class="section troubleshoot-section" data-title="문제 해결">
+      <div class="section-icon"><i class="fas fa-tools"></i></div>
+      <div class="content">
+        <div class="section-header">
+          <span class="section-number slide-in-left">07</span>
+          <h2 class="slide-in-right"><i class="fas fa-tools"></i> 문제 해결</h2>
+        </div>
+        <div class="faq-container fade-in-up">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span class="q-icon">Q</span>
+              <span>업로드했는데 웹사이트에 안 보여요</span>
+            </div>
+            <div class="faq-answer">
+              <ul>
+                <li><strong><i class="fas fa-hourglass-half"></i> 60초 기다리기:</strong> 캐시 갱신 시간</li>
+                <li><strong><i class="fas fa-check-circle"></i> 필수 속성 확인:</strong> 빈 값이 없는지 확인</li>
+                <li><strong><i class="fas fa-sync"></i> 새로고침:</strong> 브라우저 캐시 문제 (Ctrl/Cmd + Shift + R)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span class="q-icon">Q</span>
+              <span>이미지가 안 보여요</span>
+            </div>
+            <div class="faq-answer">
+              <ul>
+                <li><i class="fas fa-clock"></i> Notion 내부 이미지 URL은 <strong>1시간 후 만료</strong>됨</li>
+                <li><i class="fas fa-external-link-alt"></i> 외부 이미지 링크 사용 권장 (R2, S3 등)</li>
+                <li><i class="fas fa-file-image"></i> 이미지 파일 형식 확인 (PNG, JPG, WebP 지원)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span class="q-icon">Q</span>
+              <span>영문 페이지에 안 보여요</span>
+            </div>
+            <div class="faq-answer">
+              <ul>
+                <li><i class="fas fa-database"></i> 영문 데이터베이스(<code>_EN</code>)에도 동일하게 입력했는지 확인</li>
+              </ul>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span class="q-icon">Q</span>
+              <span>순서를 바꾸고 싶어요</span>
+            </div>
+            <div class="faq-answer">
+              <ul>
+                <li><strong><i class="fas fa-sort-numeric-down"></i> 캘린더/공지/유튜브:</strong> 날짜순 자동 정렬 (변경 불가)</li>
+                <li><strong><i class="fas fa-arrows-alt"></i> FAQ/사이트:</strong> 데이터베이스에서 드래그하여 순서 변경</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-text fade-in delay-2">
+          <p><i class="fas fa-envelope"></i> 문의사항이 있으시면 담당자에게 연락해주세요.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="section-nav">
+    <ul>
+      <li data-section="0"><span class="nav-dot"></span><span class="nav-label">시작</span></li>
+      <li data-section="1"><span class="nav-dot"></span><span class="nav-label">캘린더</span></li>
+      <li data-section="2"><span class="nav-dot"></span><span class="nav-label">공지사항</span></li>
+      <li data-section="3"><span class="nav-dot"></span><span class="nav-label">유튜브</span></li>
+      <li data-section="4"><span class="nav-dot"></span><span class="nav-label">FAQ</span></li>
+      <li data-section="5"><span class="nav-dot"></span><span class="nav-label">관련 사이트</span></li>
+      <li data-section="6"><span class="nav-dot"></span><span class="nav-label">이미지 팁</span></li>
+      <li data-section="7"><span class="nav-dot"></span><span class="nav-label">문제 해결</span></li>
+    </ul>
+  </nav>
+
+  <!-- 모바일 하단 네비게이션 -->
+  <nav id="mobile-nav">
+    <button class="mobile-nav-btn" id="mobile-prev">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+    <div class="mobile-nav-indicator">
+      <span id="mobile-current">1</span> / 8
+    </div>
+    <button class="mobile-nav-btn" id="mobile-next">
+      <i class="fas fa-chevron-down"></i>
+    </button>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
