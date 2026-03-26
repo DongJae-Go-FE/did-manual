@@ -82,62 +82,52 @@
           <span class="section-number slide-in-left">01</span>
           <h2 class="slide-in-right"><i class="fas fa-calendar-alt"></i> 캘린더 (Calendar)</h2>
         </div>
-        <div class="two-column">
-          <div class="column info-column fade-in-up">
-            <h3><i class="fas fa-table"></i> 속성 구조</h3>
-            <table class="property-table">
-              <thead>
-                <tr>
-                  <th>속성명</th>
-                  <th>타입</th>
-                  <th>필수</th>
-                  <th>설명</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>제목</td>
-                  <td><span class="type-badge">Title</span></td>
-                  <td><span class="required">✅</span></td>
-                  <td>이벤트 제목</td>
-                </tr>
-                <tr>
-                  <td>날짜</td>
-                  <td><span class="type-badge">Date</span></td>
-                  <td><span class="required">✅</span></td>
-                  <td>이벤트 날짜</td>
-                </tr>
-                <tr>
-                  <td>소제목</td>
-                  <td><span class="type-badge">Rich Text</span></td>
-                  <td><span class="optional">❌</span></td>
-                  <td>부가 설명</td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="tips-box">
-              <h4><i class="fas fa-lightbulb"></i> 작성 방법</h4>
-              <ol>
-                <li><strong>제목:</strong> 이벤트명 입력 (예: "청년 미사")</li>
-                <li><strong>날짜:</strong> 단일 날짜 또는 "End date" 활성화하여 기간 설정</li>
-                <li><strong>소제목:</strong> 추가 설명이 필요한 경우 입력</li>
-              </ol>
-            </div>
-            <div class="warning-box">
-              <h4><i class="fas fa-exclamation-triangle"></i> 주의사항</h4>
-              <ul>
-                <li>날짜가 없으면 목록에 표시되지 않습니다</li>
-                <li>최신 날짜순으로 자동 정렬됩니다</li>
-              </ul>
-            </div>
+        <div class="single-column fade-in-up">
+          <h3><i class="fas fa-table"></i> 속성 구조</h3>
+          <table class="property-table">
+            <thead>
+              <tr>
+                <th>속성명</th>
+                <th>타입</th>
+                <th>필수</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>제목</td>
+                <td><span class="type-badge">Title</span></td>
+                <td><span class="required">✅</span></td>
+                <td>이벤트 제목</td>
+              </tr>
+              <tr>
+                <td>날짜</td>
+                <td><span class="type-badge">Date</span></td>
+                <td><span class="required">✅</span></td>
+                <td>이벤트 날짜</td>
+              </tr>
+              <tr>
+                <td>소제목</td>
+                <td><span class="type-badge">Rich Text</span></td>
+                <td><span class="optional">❌</span></td>
+                <td>부가 설명</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="tips-box">
+            <h4><i class="fas fa-lightbulb"></i> 작성 방법</h4>
+            <ol>
+              <li><strong>제목:</strong> 이벤트명 입력 (예: "청년 미사")</li>
+              <li><strong>날짜:</strong> 단일 날짜 또는 "End date" 활성화하여 기간 설정</li>
+              <li><strong>소제목:</strong> 추가 설명이 필요한 경우 입력</li>
+            </ol>
           </div>
-          <div class="column image-column fade-in-up delay-1">
-            <div class="image-placeholder">
-              <div class="placeholder-content">
-                <i class="fas fa-calendar-alt placeholder-icon"></i>
-                <span class="placeholder-text">캘린더 예시 이미지</span>
-              </div>
-            </div>
+          <div class="warning-box">
+            <h4><i class="fas fa-exclamation-triangle"></i> 주의사항</h4>
+            <ul>
+              <li>날짜가 없으면 목록에 표시되지 않습니다</li>
+              <li>최신 날짜순으로 자동 정렬됩니다</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -151,72 +141,53 @@
           <span class="section-number slide-in-left">02</span>
           <h2 class="slide-in-right"><i class="fas fa-bullhorn"></i> 공지사항 (Notice)</h2>
         </div>
-        <div class="two-column">
-          <div class="column info-column fade-in-up">
-            <h3><i class="fas fa-table"></i> 속성 구조</h3>
-            <table class="property-table">
-              <thead>
-                <tr>
-                  <th>속성명</th>
-                  <th>타입</th>
-                  <th>필수</th>
-                  <th>설명</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>타이틀</td>
-                  <td><span class="type-badge">Title</span></td>
-                  <td><span class="required">✅</span></td>
-                  <td>공지사항 제목</td>
-                </tr>
-                <tr>
-                  <td>날짜</td>
-                  <td><span class="type-badge">Date</span></td>
-                  <td><span class="required">✅</span></td>
-                  <td>작성 날짜</td>
-                </tr>
-                <tr>
-                  <td>태그</td>
-                  <td><span class="type-badge">Rich Text</span></td>
-                  <td><span class="optional">❌</span></td>
-                  <td>카테고리 (공지, 소식)</td>
-                </tr>
-                <tr>
-                  <td>파일과 미디어</td>
-                  <td><span class="type-badge">Files</span></td>
-                  <td><span class="optional">❌</span></td>
-                  <td>썸네일 이미지</td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="tips-box">
-              <h4><i class="fas fa-lightbulb"></i> 작성 방법</h4>
-              <ol>
-                <li><strong>타이틀:</strong> 공지사항 제목 입력</li>
-                <li><strong>날짜:</strong> 작성일 선택</li>
-                <li><strong>태그:</strong> 카테고리 입력 (공지, 소식, 안내 등)</li>
-                <li><strong>파일과 미디어:</strong> 썸네일 이미지 업로드</li>
-                <li><strong>상세 페이지:</strong> 타이틀 옆 "열기" 버튼 클릭하여 본문 작성</li>
-              </ol>
-            </div>
-          </div>
-          <div class="column image-column fade-in-up delay-1">
-            <div class="image-placeholder">
-              <div class="placeholder-content">
-                <i class="fas fa-bullhorn placeholder-icon"></i>
-                <span class="placeholder-text">공지사항 예시 이미지</span>
-              </div>
-            </div>
-            <div class="image-spec-box">
-              <h4><i class="fas fa-image"></i> 썸네일 이미지 권장 사양</h4>
-              <ul>
-                <li><strong>권장 크기:</strong> 1280x720px (16:9)</li>
-                <li><strong>최소 크기:</strong> 640x360px</li>
-                <li><strong>최대 용량:</strong> 5MB 이하</li>
-                <li><strong>지원 형식:</strong> PNG, JPG, WebP</li>
-              </ul>
-            </div>
+        <div class="single-column fade-in-up">
+          <h3><i class="fas fa-table"></i> 속성 구조</h3>
+          <table class="property-table">
+            <thead>
+              <tr>
+                <th>속성명</th>
+                <th>타입</th>
+                <th>필수</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>타이틀</td>
+                <td><span class="type-badge">Title</span></td>
+                <td><span class="required">✅</span></td>
+                <td>공지사항 제목</td>
+              </tr>
+              <tr>
+                <td>날짜</td>
+                <td><span class="type-badge">Date</span></td>
+                <td><span class="required">✅</span></td>
+                <td>작성 날짜</td>
+              </tr>
+              <tr>
+                <td>태그</td>
+                <td><span class="type-badge">Rich Text</span></td>
+                <td><span class="optional">❌</span></td>
+                <td>카테고리 (공지, 소식)</td>
+              </tr>
+              <tr>
+                <td>파일과 미디어</td>
+                <td><span class="type-badge">Files</span></td>
+                <td><span class="optional">❌</span></td>
+                <td>썸네일 이미지</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="tips-box">
+            <h4><i class="fas fa-lightbulb"></i> 작성 방법</h4>
+            <ol>
+              <li><strong>타이틀:</strong> 공지사항 제목 입력</li>
+              <li><strong>날짜:</strong> 작성일 선택</li>
+              <li><strong>태그:</strong> 카테고리 입력 (공지, 소식, 안내 등)</li>
+              <li><strong>파일과 미디어:</strong> 썸네일 이미지 업로드 (이미지는 클수록 좋으며, 비율을 맞춰서 업로드)</li>
+              <li><strong>상세 페이지:</strong> 타이틀 옆 "열기" 버튼 클릭하여 본문 작성</li>
+            </ol>
           </div>
         </div>
       </div>
@@ -310,63 +281,53 @@
           <span class="section-number slide-in-left">04</span>
           <h2 class="slide-in-right"><i class="fas fa-question-circle"></i> FAQ</h2>
         </div>
-        <div class="two-column">
-          <div class="column info-column fade-in-up">
-            <h3><i class="fas fa-table"></i> 속성 구조</h3>
-            <table class="property-table">
-              <thead>
-                <tr>
-                  <th>속성명</th>
-                  <th>타입</th>
-                  <th>필수</th>
-                  <th>설명</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>아이디(아무거나 쓰세요)</td>
-                  <td><span class="type-badge">Title</span></td>
-                  <td><span class="required">✅</span></td>
-                  <td>고유 ID</td>
-                </tr>
-                <tr>
-                  <td>제목</td>
-                  <td><span class="type-badge">Rich Text</span></td>
-                  <td><span class="required">✅</span></td>
-                  <td>질문</td>
-                </tr>
-                <tr>
-                  <td>내용</td>
-                  <td><span class="type-badge">Rich Text</span></td>
-                  <td><span class="required">✅</span></td>
-                  <td>답변</td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="tips-box">
-              <h4><i class="fas fa-lightbulb"></i> 작성 방법</h4>
-              <ol>
-                <li><strong>아이디:</strong> 순번이나 고유값 입력 (예: "1", "faq-001")</li>
-                <li><strong>제목:</strong> 질문 내용 입력 (예: "참가비는 얼마인가요?")</li>
-                <li><strong>내용:</strong> 답변 내용 입력</li>
-              </ol>
-            </div>
-            <div class="warning-box">
-              <h4><i class="fas fa-exclamation-triangle"></i> 주의사항</h4>
-              <ul>
-                <li>아이디는 중복 가능하지만, 구분을 위해 고유하게 작성 권장</li>
-                <li>긴 답변은 줄바꿈(Shift + Enter)으로 가독성 높이기</li>
-                <li>데이터베이스 순서대로 표시 (드래그로 순서 변경 가능)</li>
-              </ul>
-            </div>
+        <div class="single-column fade-in-up">
+          <h3><i class="fas fa-table"></i> 속성 구조</h3>
+          <table class="property-table">
+            <thead>
+              <tr>
+                <th>속성명</th>
+                <th>타입</th>
+                <th>필수</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>아이디(아무거나 쓰세요)</td>
+                <td><span class="type-badge">Title</span></td>
+                <td><span class="required">✅</span></td>
+                <td>고유 ID</td>
+              </tr>
+              <tr>
+                <td>제목</td>
+                <td><span class="type-badge">Rich Text</span></td>
+                <td><span class="required">✅</span></td>
+                <td>질문</td>
+              </tr>
+              <tr>
+                <td>내용</td>
+                <td><span class="type-badge">Rich Text</span></td>
+                <td><span class="required">✅</span></td>
+                <td>답변</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="tips-box">
+            <h4><i class="fas fa-lightbulb"></i> 작성 방법</h4>
+            <ol>
+              <li><strong>아이디:</strong> 순번이나 고유값 입력 (예: "1", "faq-001")</li>
+              <li><strong>제목:</strong> 질문 내용 입력 (예: "참가비는 얼마인가요?")</li>
+              <li><strong>내용:</strong> 답변 내용 입력</li>
+            </ol>
           </div>
-          <div class="column image-column fade-in-up delay-1">
-            <div class="image-placeholder">
-              <div class="placeholder-content">
-                <i class="fas fa-question-circle placeholder-icon"></i>
-                <span class="placeholder-text">FAQ 예시 이미지</span>
-              </div>
-            </div>
+          <div class="warning-box">
+            <h4><i class="fas fa-exclamation-triangle"></i> 주의사항</h4>
+            <ul>
+              <li>아이디는 중복 가능하지만, 구분을 위해 고유하게 작성 권장</li>
+              <li>긴 답변은 줄바꿈(Shift + Enter)으로 가독성 높이기</li>
+              <li>데이터베이스 순서대로 표시 (드래그로 순서 변경 가능)</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -380,71 +341,52 @@
           <span class="section-number slide-in-left">05</span>
           <h2 class="slide-in-right"><i class="fas fa-link"></i> 관련 사이트 (Site)</h2>
         </div>
-        <div class="two-column">
-          <div class="column info-column fade-in-up">
-            <h3><i class="fas fa-table"></i> 속성 구조</h3>
-            <table class="property-table">
-              <thead>
-                <tr>
-                  <th>속성명</th>
-                  <th>타입</th>
-                  <th>필수</th>
-                  <th>설명</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>사이트명</td>
-                  <td><span class="type-badge">Title</span></td>
-                  <td><span class="required">✅</span></td>
-                  <td>사이트 이름</td>
-                </tr>
-                <tr>
-                  <td>URL</td>
-                  <td><span class="type-badge">URL</span></td>
-                  <td><span class="required">✅</span></td>
-                  <td>사이트 링크 주소</td>
-                </tr>
-                <tr>
-                  <td>파일과 미디어</td>
-                  <td><span class="type-badge">Files</span></td>
-                  <td><span class="required">✅</span></td>
-                  <td>사이트 로고/썸네일</td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="tips-box">
-              <h4><i class="fas fa-lightbulb"></i> 작성 방법</h4>
-              <ol>
-                <li><strong>사이트명:</strong> 사이트 이름 입력 (예: "WYD 서울 2027")</li>
-                <li><strong>URL:</strong> 전체 주소 입력 (예: https://wydseoul2027.kr)</li>
-                <li><strong>파일과 미디어:</strong> 로고 또는 대표 이미지 업로드</li>
-              </ol>
-            </div>
-            <div class="warning-box">
-              <h4><i class="fas fa-exclamation-triangle"></i> 주의사항</h4>
-              <ul>
-                <li>URL은 https:// 포함 전체 주소 입력</li>
-                <li>이미지가 없으면 깨진 이미지로 표시될 수 있음</li>
-              </ul>
-            </div>
+        <div class="single-column fade-in-up">
+          <h3><i class="fas fa-table"></i> 속성 구조</h3>
+          <table class="property-table">
+            <thead>
+              <tr>
+                <th>속성명</th>
+                <th>타입</th>
+                <th>필수</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>사이트명</td>
+                <td><span class="type-badge">Title</span></td>
+                <td><span class="required">✅</span></td>
+                <td>사이트 이름</td>
+              </tr>
+              <tr>
+                <td>URL</td>
+                <td><span class="type-badge">URL</span></td>
+                <td><span class="required">✅</span></td>
+                <td>사이트 링크 주소</td>
+              </tr>
+              <tr>
+                <td>파일과 미디어</td>
+                <td><span class="type-badge">Files</span></td>
+                <td><span class="required">✅</span></td>
+                <td>사이트 로고/썸네일</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="tips-box">
+            <h4><i class="fas fa-lightbulb"></i> 작성 방법</h4>
+            <ol>
+              <li><strong>사이트명:</strong> 사이트 이름 입력 (예: "WYD 서울 2027")</li>
+              <li><strong>URL:</strong> 전체 주소 입력 (예: https://wydseoul2027.kr)</li>
+              <li><strong>파일과 미디어:</strong> 로고 또는 대표 이미지 업로드 (이미지는 클수록 좋으며, 비율을 맞춰서 업로드)</li>
+            </ol>
           </div>
-          <div class="column image-column fade-in-up delay-1">
-            <div class="image-placeholder">
-              <div class="placeholder-content">
-                <i class="fas fa-link placeholder-icon"></i>
-                <span class="placeholder-text">관련 사이트 예시 이미지</span>
-              </div>
-            </div>
-            <div class="image-spec-box">
-              <h4><i class="fas fa-image"></i> 로고/썸네일 이미지 권장 사양</h4>
-              <ul>
-                <li><strong>권장 크기:</strong> 400x400px (1:1)</li>
-                <li><strong>최소 크기:</strong> 200x200px</li>
-                <li><strong>최대 용량:</strong> 2MB 이하</li>
-                <li><strong>지원 형식:</strong> PNG, JPG, WebP</li>
-              </ul>
-            </div>
+          <div class="warning-box">
+            <h4><i class="fas fa-exclamation-triangle"></i> 주의사항</h4>
+            <ul>
+              <li>URL은 https:// 포함 전체 주소 입력</li>
+              <li>이미지가 없으면 깨진 이미지로 표시될 수 있음</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -480,11 +422,14 @@
           <div class="column image-column fade-in-up delay-1">
             <div class="spec-table-container">
               <h3><i class="fas fa-ruler-combined"></i> 권장 이미지 사양</h3>
+              <div class="image-size-notice">
+                <p><i class="fas fa-expand-arrows-alt"></i> <strong>이미지는 크면 클수록 좋습니다!</strong> 각 용도에 맞는 비율을 반드시 맞춰서 업로드해주세요.</p>
+              </div>
               <table class="spec-table">
                 <thead>
                   <tr>
                     <th>용도</th>
-                    <th>권장 크기</th>
+                    <th>최소 크기</th>
                     <th>비율</th>
                     <th>최대 용량</th>
                   </tr>
@@ -492,24 +437,18 @@
                 <tbody>
                   <tr>
                     <td>공지사항 썸네일</td>
-                    <td>1280x720px</td>
+                    <td>1280x720px 이상</td>
                     <td>16:9</td>
                     <td>5MB</td>
                   </tr>
                   <tr>
                     <td>관련 사이트 로고</td>
-                    <td>400x400px</td>
+                    <td>400x400px 이상</td>
                     <td>1:1</td>
                     <td>2MB</td>
                   </tr>
                 </tbody>
               </table>
-            </div>
-            <div class="image-placeholder small">
-              <div class="placeholder-content">
-                <i class="fas fa-cloud-upload-alt placeholder-icon"></i>
-                <span class="placeholder-text">이미지 업로드 예시</span>
-              </div>
             </div>
           </div>
         </div>
